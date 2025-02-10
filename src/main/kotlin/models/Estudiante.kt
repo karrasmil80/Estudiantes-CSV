@@ -1,18 +1,17 @@
 package org.example.models
 
-import java.time.LocalDateTime
+import java.time.LocalDate
 
 // Clase con los parámetros del estudiante
 data class Estudiante (
     val id: Long,
     val nombre: String,
-    val tipo: Tipo,
+    val tipo: Tipo = Tipo.ALUMNO,
     val edad: Int,
-    val createdAt: LocalDateTime,
+    val createdAt: LocalDate,
 ) {
-}
-
-// Tipos
-enum class Tipo {
-    ALUMNO
+    // Tipos
+    enum class Tipo {
+        ALUMNO
+    }
 }

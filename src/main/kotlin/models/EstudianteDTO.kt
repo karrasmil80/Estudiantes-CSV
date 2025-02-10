@@ -6,7 +6,6 @@ data class EstudianteDTO(
     val tipo: String,
     val edad: Int,
     val createdAt: String,
-) {
-}
+)
 
 

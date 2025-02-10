@@ -1,12 +1,13 @@
 package org.example
 
+import kkarrasmil80.mappers.toModel
 import org.example.models.EstudianteDTO
 import java.io.File
 
 fun main() {
 
     val file = File("data", "alumnos.csv")
-    if (!file.exists()) {
+    if (file.exists() && file.isFile && file.canRead()) {
         println("File exist")
     } else {
         throw IllegalArgumentException("File does not exist")
@@ -17,10 +18,10 @@ fun main() {
         .map { item -> EstudianteDTO (
             id = item[0].toLong(),
             nombre = item[1],
-            tipo = item[2],
-            edad = item[3].toInt(),
-            createdAt = item[4]
-        )
+            createdAt = item[2],
+            tipo = item[3],
+            edad = item[4].toInt()
+        ).toModel()
     }
     estudiante.forEach {
         println(it)
