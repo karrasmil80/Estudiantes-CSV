@@ -1,14 +1,14 @@
 package org.example.models
 
-import java.time.LocalDateTime
+import java.time.LocalDate
 
 // Clase con los parámetros del estudiante
-data class Estudiante (
+data class Estudiante(
     val id: Long,
     val nombre: String,
     val tipo: Tipo,
     val edad: Int,
-    val createdAt: LocalDateTime,
+    val createdAt: LocalDate,
 ) {
 }
 
